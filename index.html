@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"              content="width=device-width, initial-scale=1.0"/>
+  <meta name=”description”           content="JaSST'18 Kyushuのランチマップです。"/>
+  <link rel="icon"                   type="image/png"    href="favicon.ico">
+  <link rel="shortcut icon"          type="image/x-icon" href="favicon.ico">
+  <!-- SNS settings -->
+  <meta property="og:type"           content="website">
+  <meta property="og:image"          content="http://tosite.raindrop.jp/lunch/imgs/nLexGc0s_400x400.jpg">
+  <meta name="twitter:card"          content="summary">
+  <meta name="twitter:site"          content="@mao_sum">
+  <meta property="og:url"            content="http://tosite.raindrop.jp/lunch/">
+  <meta property="og:title"          content="JaSST'18 Kyushu Lunch Map">
+  <meta property="og:description"    content="JaSST'18 Kyushuのランチマップです。アンケートへのリンクもあるよ！">
+  <meta property="og:site_name"      content="JaSST'18 Kyushu Lunch Map">
+  <meta property="og:locale"         content="ja_JP">
+  
+  <title>JaSST'18 Kyushu Lunch Map</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <style>
+    #map           { width: 100%; height: 80vh; }
+    body           { display: flex; min-height: 100vh; flex-direction: column; }
+    main           { flex: 1 0 auto; }
+    #tag-chips     { margin-top: 20px; margin-bottom: 10px; }
+    .page-footer   { padding: 10px; }
+    .brand-logo    { margin-left: 10px;}
+    .tag-header    { border-bottom: 2px solid #ddd; margin-bottom: 5px !important; }
+    #loading       { position: absolute; top: 0; bottom: 0; right: 0; left: 0; margin: auto; height: 40px; line-height: 40px; letter-spacing: 15px; z-index: 1; text-align: center; }
+    #loading span  { font-size: 40px; opacity: 0; position: relative; font-weight: 900; }
+    main, footer   { display: none; }
+    #span1         { animation: pop 1.0s; animation-timing-function: ease-in-out; animation-fill-mode: forwards; }
+    #span2         { animation: pop 1.0s; animation-timing-function: ease-in-out; animation-fill-mode: forwards; animation-delay: 0.2s; }
+    #span3         { animation: pop 1.0s; animation-timing-function: ease-in-out; animation-fill-mode: forwards; animation-delay: 0.4s; }
+    #span4         { animation: pop 1.0s; animation-timing-function: ease-in-out; animation-fill-mode: forwards; animation-delay: 0.6s; }
+    #span5         { animation: pop 1.0s; animation-timing-function: ease-in-out; animation-fill-mode: forwards; animation-delay: 0.8s; }
+    @keyframes pop { 0% { opacity: 0; top: -20px; } 100% { opacity: 1; top: 0; } }
+    #search-btn    { position: absolute; right: 5px; margin-top: 5px; }
+    #share         { position: absolute; right: 10px; bottom: 60px; }
+  </style>
+</head>
+<body>
+  <div id="loading">
+    <span class="pink-text" id="span1">J</span>
+    <span class="pink-text" id="span2">a</span>
+    <span class="pink-text" id="span3">S</span>
+    <span class="pink-text" id="span4">S</span>
+    <span class="pink-text" id="span5">T</span>
+  </div>
+  <main>
+    <nav class="nav-extended">
+      <div class="nav-wrapper pink accent-4">
+        <span class="brand-logo">Lunch Map</span>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a targer="_blank" href="http://www.jasst.jp/symposium/jasst18kyushu.html">Official</a></li>
+          <li><a targer="_blank" href="https://twitter.com/mao_sum">Author</a></li>
+          <li><a targer="_blank" href="#">Enquete</a></li>
+          <li><a targer="_blank" href="https://jasstkyushu.hatenablog.com/">Blog</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <ul class="sidenav" id="mobile-demo">
+      <li><h4 style="padding-left: 10px;">Sidebar</h4></li>
+      <li><a targer="_blank" href="http://www.jasst.jp/symposium/jasst18kyushu.html"><i class="material-icons">event_note</i>Official</a></li>
+      <li><a targer="_blank" href="https://twitter.com/mao_sum"><i class="material-icons">person</i>Author</a></li>
+      <li><a targer="_blank" href="#"><i class="material-icons">pie_chart</i>Enquete</a></li>
+      <li><a targer="_blank" href="https://jasstkyushu.hatenablog.com/"><i class="material-icons">insert_drive_file</i>Blog</a></li>
+    </ul>
+    
+    <a id="search-btn" class="waves-effect waves-light btn btn-small light-green darken-1 modal-trigger" href="#search-tags">Search</a>
+    
+    <div id="search-tags" class="modal">
+      <div id="tag-chips" class="modal-content">
+        <span class="chip amber" onclick="searchTag('すべて')" id="すべて">すべて</span>
+        <p class="tag-header">カテゴリから選ぶ</p>
+        <span class="chip" onclick="searchTag('洋食')" id="洋食">洋食</span>
+        <span class="chip" onclick="searchTag('和食')" id="和食">和食</span>
+        <span class="chip" onclick="searchTag('中華')" id="中華">中華</span>
+        <span class="chip" onclick="searchTag('海鮮')" id="海鮮">海鮮</span>
+        <span class="chip" onclick="searchTag('ちゃんぽん')" id="ちゃんぽん">ちゃんぽん</span>
+        <span class="chip" onclick="searchTag('ラーメン')" id="ラーメン">ラーメン</span>
+        <p class="tag-header">雰囲気から選ぶ</p>
+        <span class="chip" onclick="searchTag('カジュアル')" id="カジュアル">カジュアル</span>
+        <span class="chip" onclick="searchTag('フォーマル')" id="フォーマル">フォーマル</span>
+        <span class="chip" onclick="searchTag('テラス席')" id="テラス席">テラス席</span>
+        <span class="chip" onclick="searchTag('オシャレ')" id="オシャレ">オシャレ</span>
+        <span class="chip" onclick="searchTag('家族向け')" id="家族向け">家族向け</span>
+        <span class="chip" onclick="searchTag('大人数')" id="大人数">大人数</span>
+      </div>
+    </div>
+    <div id="map"></div>
+    <button id="share" onclick="share()" class="btn-floating btn waves-effect waves-light indigo lighten-1">
+      <i class="material-icons">share</i>
+    </button>
+    
+  </main>
+  <footer class="page-footer grey darken-3 right-align">
+    <small>Created by</small>
+    <a href="http://www.jasst.jp/about.html#kyushu" class="white-text" target="_blank">JaSST'18 Kyushu <small>executive committee members</small></small></a>
+  </footer>
+  
+  <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3sLps8i7l_i-Y9JIU4Fqd_FGXrOFIcgc" async></script>
+  <script src="./js/map.js" async></script>
+  <script>
+    M.AutoInit()
+    window.onload = () => { getJson() }
+    setTimeout(() => {
+      $("#loading").fadeOut(() => {
+        $("main").fadeIn()
+        $("footer").fadeIn()
+        let h = $(".nav-extended").outerHeight() + $("footer").outerHeight()
+        $("#map").height(window.innerHeight - h)
+      })
+    }, 2000)
+    function share() {
+      var s, url
+      s = "JaSST'18 Kyushu Lunch Map from"
+      url = document.location.href
+      if (s.length + url.length > 140) { s = s.substr(0, 137 - url.length) + '...' }
+      url = `http://twitter.com/share?url=${escape(url)}&text=${s}&hashtags=JaSSTKyushu`
+      window.open(url, "_blank", "width=600,height=260")
+    }
+  </script>
+</body>
+</html>

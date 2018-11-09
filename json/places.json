@@ -1,0 +1,142 @@
+[
+  {
+    "name" : "ガスト",
+    "lat"  : 32.737935,
+    "lng"  : 129.870385,
+    "url"  : "https://store-info.skylark.co.jp/gusto/spot/detail?bc=eNqLVnq2ZM7zLYseN3c8bm5%2B3DxdSUcJiF5O3f50S9%2FzOT1AdmJKSlFqcbF%2BTmZxiX1xamJRckZMqYGBcQpUAsQxMkPiGKeYGEEE44FCORChkqLSVKBhT%2BdseDp78%2BPGdU92rH26v%2FlxY%2Ffjpk6IE4CyxQX5JWB79HMTC4i2y8jAELt1sQBtR1wD&code=018579&_resl=true",
+    "tags" : ["ファミレス", "カジュアル", "家族向け"]
+  },
+  {
+    "name" : "アティック",
+    "lat"  : 32.743439,
+    "lng"  : 129.870690,
+    "url"  : "http://attic-coffee.com/attic",
+    "tags" : ["カフェ", "オシャレ", "テラス席"]
+  },
+  {
+    "name" : "レッドランタン",
+    "lat"  : 32.744030,
+    "lng"  : 129.870635,
+    "url"  : "http://redlantern.jp/info.html",
+    "tags" : ["中華", "テラス席", "大人数"]
+  },
+  {
+    "name" : "出島テラス",
+    "lat"  : 32.744509,
+    "lng"  : 129.870601,
+    "url"  : "https://www.hotpepper.jp/strJ000113246/",
+    "tags" : ["洋食", "オシャレ", "大人数"]
+  },
+  {
+    "name" : "海鮮市場 長崎港",
+    "lat"  : 32.744599,
+    "lng"  : 129.870626,
+    "url"  : "https://nagasakikou.com/shopinfo/#shop01",
+    "tags" : ["海鮮", "カジュアル", "テラス席"]
+  },
+  {
+    "name" : "魚たつ 江戸町店",
+    "lat"  : 32.745262,
+    "lng"  : 129.872427,
+    "url"  : "http://uotatsu-nagasaki.net/concept.html",
+    "tags" : ["海鮮", "カジュアル"]
+  },
+  {
+    "name" : "BABAKE",
+    "lat"  : 32.744287,
+    "lng"  : 129.874999,
+    "url"  : "http://www.babake.jp/",
+    "tags" : ["ラーメン", "カジュアル"]
+  },
+  {
+    "name" : "つけ麺 ぱぴこ",
+    "lat"  : 32.744881,
+    "lng"  : 129.874515,
+    "url"  : "https://connect.place/papico-smile/",
+    "tags" : ["ラーメン", "カジュアル"]
+  },
+  {
+    "name" : "水辺の森のワイナリーレストラン OPENERS",
+    "lat"  : 32.740467,
+    "lng"  : 129.871785,
+    "url"  : "https://mightysparrow.co.jp/openers/",
+    "tags" : ["洋食", "テラス席", "オシャレ", "フォーマル"]
+  },
+  {
+    "name" : "レストラン シーボルト",
+    "lat"  : 32.738971,
+    "lng"  : 129.872184,
+    "url"  : "http://newtanda.com/restaurant/",
+    "tags" : ["洋食", "和食", "オシャレ", "フォーマル"]
+  },
+  {
+    "name" : "四海楼",
+    "lat"  : 32.736584,
+    "lng"  : 129.869757,
+    "url"  : "http://shikairou.com/",
+    "tags" : ["中華", "ちゃんぽん", "カジュアル"]
+  },
+  {
+    "name" : "江山楼",
+    "lat"  : 32.741286,
+    "lng"  : 129.875572,
+    "url"  : "http://www.kouzanrou.com/",
+    "tags" : ["中華", "ちゃんぽん"]
+  },
+  {
+    "name" : "cafeわかば堂",
+    "lat"  : 32.742955,
+    "lng"  : 129.873343,
+    "url"  : "http://nagasaki.wakabadou.com/",
+    "tags" : ["洋食", "オシャレ"]
+  },
+  {
+    "name" : "Branch OTTO Dejima",
+    "lat"  : 32.742826,
+    "lng"  : 129.874187,
+    "url"  : "https://www.otto-web.net/branch-dejima.html",
+    "tags" : ["洋食", "カジュアル", "テラス席"]
+  },
+  {
+    "name" : "リンガーハット",
+    "lat"  : 32.744744,
+    "lng"  : 129.870855,
+    "url"  : "https://shop.ringerhut.jp/shop/r0397",
+    "tags" : ["ちゃんぽん", "カジュアル", "家族向け"]
+  },
+  {
+    "name" : "濵かつ",
+    "lat"  : 32.744845,
+    "lng"  : 129.870982,
+    "url"  : "https://shop.hamakatsu.jp/shop/h0077",
+    "tags" : ["とんかつ", "カジュアル", "家族向け", "和食"]
+  },
+  {
+    "name" : "ラーメン厨房 山や",
+    "lat"  : 32.747222,
+    "lng"  : 129.872204,
+    "url"  : "https://www.facebook.com/%E3%82%89%E3%83%BC%E3%82%81%E3%82%93%E5%8E%A8%E6%88%BF-%E5%B1%B1%E3%82%84-146350602234224/",
+    "tags" : ["ラーメン", "カジュアル"]
+  },
+  {
+    "name" : "まつうら屋",
+    "lat"  : 32.746213,
+    "lng"  : 129.873465,
+    "url"  : "https://matsuuraya.owst.jp/lunches",
+    "tags" : ["和食", "海鮮", "カジュアル"]
+  },
+  {
+    "name" : "ガリアーノ",
+    "lat"  : 32.745430,
+    "lng"  : 129.871103,
+    "url"  : "https://nagasaki-galliano.business.site/",
+    "tags" : ["洋食", "オシャレ", "カジュアル"]
+  },
+  {
+    "name" : "ゆめタウン 夢彩都",
+    "lat"  : 32.746315,
+    "lng"  : 129.869986,
+    "url"  : "https://www.izumi.jp/yume-saito/shop/floor5.html",
+    "tags" : ["洋食", "和食", "ラーメン", "ちゃんぽん", "カジュアル", "家族向け"]
+  }
+]
