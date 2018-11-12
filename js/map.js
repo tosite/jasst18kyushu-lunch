@@ -37,11 +37,19 @@ function initMap() {
     info          = getInfoWindowHtml(e)
     infoWindow[i] = new google.maps.InfoWindow({ content: info })
     markerClick(i)
+    markerOver(i)
   })
 }
 
 function markerClick(i) {
   marker[i].addListener("click", function () {
+    for(j = 0; j < marker.length; j++) { infoWindow[j].close() }
+    infoWindow[i].open(map, marker[i])
+  })
+}
+
+function markerOver(i) {
+  marker[i].addListener('mouseover', function(){
     for(j = 0; j < marker.length; j++) { infoWindow[j].close() }
     infoWindow[i].open(map, marker[i])
   })
